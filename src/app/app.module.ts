@@ -11,6 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ContainerComponent } from './shared/container/container.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MatCardModule } from '@angular/material/card';
+import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
+import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FooterComponent,
     BannerComponent,
     CardComponent,
+    ContainerComponent,
+    HomeComponent,
+    CardBuscaComponent,
+    CardDepoimentoComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +36,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
