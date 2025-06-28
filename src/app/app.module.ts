@@ -16,6 +16,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
 import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
+import { FormaBuscaComponent } from './shared/forma-busca/forma-busca.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -28,6 +35,7 @@ import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoiment
     HomeComponent,
     CardBuscaComponent,
     CardDepoimentoComponent,
+    FormaBuscaComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +45,12 @@ import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoiment
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
