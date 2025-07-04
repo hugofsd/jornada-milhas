@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PromocaoService } from 'src/app/core/servicos/promocao.service';
 import { Promocao } from 'src/app/core/types/type';
 
@@ -7,7 +7,7 @@ import { Promocao } from 'src/app/core/types/type';
   templateUrl: './promocoes.component.html',
   styleUrls: ['./promocoes.component.scss'],
 })
-export class PromocoesComponent {
+export class PromocoesComponent implements OnInit {
   promocoes!: Promocao[];
 
   constructor(private service: PromocaoService) {}
