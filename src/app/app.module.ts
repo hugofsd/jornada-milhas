@@ -28,6 +28,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/promocoes/promocoes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PromocoesComponent } from './pages/promocoes/promocoes.component';
     MatNativeDateModule,
     MatDialogModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
