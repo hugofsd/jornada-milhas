@@ -30,13 +30,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -53,10 +54,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ModalComponent,
     BotaoControleComponent,
     PromocoesComponent,
-    DropdownUfComponent,
     SeletorPassageiroComponent,
     LoginComponent,
+    DropdownUfComponent,
     FormBaseComponent,
+    CadastroComponent,
   ],
   imports: [
     BrowserModule,
