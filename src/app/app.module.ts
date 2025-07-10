@@ -33,6 +33,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FormBaseComponent } from './shared/form-base/form-base.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,7 @@ import { LoginComponent } from './pages/login/login.component';
     DropdownUfComponent,
     SeletorPassageiroComponent,
     LoginComponent,
+    FormBaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,9 @@ import { LoginComponent } from './pages/login/login.component';
     HttpClientModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    MatRadioModule,
+    MatDividerModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
