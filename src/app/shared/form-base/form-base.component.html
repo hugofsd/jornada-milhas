@@ -95,11 +95,13 @@
               <input matInput formControlName="confirmarEmail" placeholder="Digite seu e-mail novamente">
               <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['required']">Confirmação de E-mail é obrigatória</mat-error>
               <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['email']">E-mail inválido</mat-error>
+              <mat-error *ngIf="cadastroForm.get('confirmarEmail')?.errors?.['equalTo']">E-mail diferente </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Confirmar Senha</mat-label>
               <input matInput formControlName="confirmarSenha" type="password" placeholder="Repita sua senha">
               <mat-error *ngIf="cadastroForm.get('confirmarSenha')?.errors?.['required']">Confirmação de Senha é obrigatória</mat-error>
+              <mat-error *ngIf="cadastroForm.get('confirmarSenha')?.errors?.['equalTo']">Senha diferentes</mat-error>
             </mat-form-field>
           </div>
         </div>

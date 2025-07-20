@@ -1,4 +1,5 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+// validação de personalizadas.
 export class FormValidations {
   static equalTo(otherField: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
