@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log('Fazendo login');
     if (this.loginForm.valid) {
       const email = this.loginForm.value.email;
       const senha = this.loginForm.value.senha;
