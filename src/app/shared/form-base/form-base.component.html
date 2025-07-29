@@ -7,7 +7,7 @@
       <section>
         <div class="acoesPerfil"  *ngIf="perfilComponent">
           <h2>Dados pessoais</h2>
-          <button mat-stroked-button color="primary">
+          <button (click)="deslogar()" mat-stroked-button color="primary">
             <mat-icon>logout</mat-icon>
             DESLOGAR
           </button>
@@ -105,7 +105,7 @@
             </mat-form-field>
           </div>
         </div>
-        <mat-checkbox formControlName="aceitarTermos" color="primary" class="full-width">Li e aceito os termos e condições deste cadastro *</mat-checkbox>
+        <mat-checkbox *ngIf="!perfilComponent" formControlName="aceitarTermos" color="primary" class="full-width">Li e aceito os termos e condições deste cadastro *</mat-checkbox>
         <mat-error *ngIf="cadastroForm.get('aceitarTermos')?.invalid && cadastroForm.get('aceitarTermos')?.dirty">
           Você precisa aceitar os termos e condições para efetuar o cadastro
         </mat-error>
@@ -115,7 +115,8 @@
           [disabled]="cadastroForm.invalid"
           (click)="executarAcao()"
           color="primary"
-        >{{ textoBotao }}
+          [class.perfil-button]="perfilComponent"
+          >{{ textoBotao }}
         </button>
       </mat-card-actions>
     </form>

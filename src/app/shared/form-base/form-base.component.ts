@@ -17,10 +17,11 @@ import { FormValidations } from '../form-validations';
 export class FormBaseComponent implements OnInit {
   cadastroForm!: FormGroup;
 
-  @Input() titulo!: string;
-  @Input() textoBotao!: string;
-  @Input() perfilComponent!: boolean;
+  @Input() perfilComponent: boolean = false;
+  @Input() titulo: string = 'Crie sua conta';
+  @Input() textoBotao: string = 'CADASTRAR';
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>();
+  @Output() sair: EventEmitter<any> = new EventEmitter<any>();
 
   estadoControl = new FormControl<UnidadeFederativa | null>(
     null,
@@ -65,5 +66,9 @@ export class FormBaseComponent implements OnInit {
   }
   executarAcao() {
     this.acaoClique.emit();
+  }
+
+  deslogar() {
+    this.sair.emit();
   }
 }

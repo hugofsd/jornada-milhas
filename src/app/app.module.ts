@@ -38,6 +38,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     DropdownUfComponent,
     FormBaseComponent,
     CadastroComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
