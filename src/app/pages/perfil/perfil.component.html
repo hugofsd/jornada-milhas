@@ -3,7 +3,7 @@
     alt="Banner da tela de Perfil">
 </app-banner>
 <app-form-base
-  [titulo]="titulo"
+  [titulo]="titulo + nome"
   [textoBotao]="textoBotao"
   [perfilComponent]="true"
   (acaoClique)="atualizarPerfil()"
