@@ -30,10 +30,14 @@ export class CadastroService {
     pessoaUsuaria: PessoaUsuaria,
     token: string
   ): Observable<PessoaUsuaria> {
-    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
-
-    return this.http.patch<PessoaUsuaria>(`${this.apiUrl}/auth/perfil`, {
-      headers,
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
     });
+
+    return this.http.patch<PessoaUsuaria>(
+      `${this.apiUrl}/auth/perfil`,
+      pessoaUsuaria,
+      { headers }
+    );
   }
 }

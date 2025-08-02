@@ -82,7 +82,7 @@
               <mat-error *ngIf="cadastroForm.get('email')?.errors?.['required']">E-mail é obrigatório</mat-error>
               <mat-error *ngIf="cadastroForm.get('email')?.errors?.['email']">E-mail inválido</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline">
+             <mat-form-field appearance="outline">
               <mat-label>Senha</mat-label>
               <input matInput formControlName="senha" type="password" placeholder="Digite sua senha">
               <mat-error *ngIf="cadastroForm.get('senha')?.errors?.['required']">Senha é obrigatória</mat-error>

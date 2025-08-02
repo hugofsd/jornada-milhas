@@ -1,9 +1,11 @@
+import { Router, RouterModule } from '@angular/router';
 import { FormularioService } from 'src/app/core/services/formulario.service';
 import { FormGroup } from '@angular/forms';
 import { CadastroService } from './../../core/services/cadastro.service';
 import { TokenService } from './../../core/services/token.service';
 import { Component, OnInit } from '@angular/core';
 import { PessoaUsuaria } from 'src/app/core/types/type';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-perfil',
@@ -22,7 +24,9 @@ export class PerfilComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private cadastroService: CadastroService,
-    private formularioService: FormularioService
+    private formularioService: FormularioService,
+    private router: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -30,11 +34,11 @@ export class PerfilComponent implements OnInit {
     this.cadastroService.buscarCadastro(this.token).subscribe((cadastro) => {
       this.cadastro = cadastro;
       this.nome = this.cadastro.nome;
-      this.carregarFormulário();
+      this.carregarFormulario();
     });
   }
 
-  carregarFormulário() {
+  carregarFormulario() {
     this.form = this.formularioService.getCadastro();
 
     //patchValue , uma função do Angular que permite atualizar
@@ -58,10 +62,38 @@ export class PerfilComponent implements OnInit {
   }
 
   atualizarPerfil() {
-    console.log('Perfil atualizado com sucesso');
+    console.log('Atualizar Perfil');
+    const dadosAtualizados = {
+      nome: this.form?.value.nome,
+      nascimento: this.form?.value.nascimento,
+      cpf: this.form?.value.cpf,
+      telefone: this.form?.value.telefone,
+      email: this.form?.value.email,
+      senha: this.form?.value.senha,
+      cidade: this.form?.value.cidade,
+      estado: this.form?.value.estado,
+      genero: this.form?.value.genero,
+    };
+
+    if (this.form?.value.senha) {
+      dadosAtualizados.senha = this.form.value.senha;
+    }
+
+    this.cadastroService
+      .editarCadastro(dadosAtualizados, this.token)
+      .subscribe({
+        next: () => {
+          alert('Cadastro editado com sucesso!');
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
 
   deslogar() {
-    console.log('Logout realizado com sucesso');
+    this.userService.logout();
+    this.router.navigate(['/login']);
   }
 }
