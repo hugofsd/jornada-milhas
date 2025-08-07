@@ -5,8 +5,7 @@
   ></app-banner>
   <app-container>
     <h2>Promoções</h2>
-    <app-forma-busca></app-forma-busca>
-
+    <app-forma-busca (realizarBusca)="navegarParaBusca($event)"></app-forma-busca>
     <app-promocoes />
     <h2>Depoimentos</h2>
     <div class="card-wrapper">

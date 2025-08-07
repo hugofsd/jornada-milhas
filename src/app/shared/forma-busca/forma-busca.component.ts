@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 
 @Component({
@@ -7,9 +7,12 @@ import { FormBuscaService } from 'src/app/core/services/form-busca.service';
   styleUrls: ['./forma-busca.component.scss'],
 })
 export class FormaBuscaComponent {
+  @Output() realizarBusca = new EventEmitter(); // emitir a informação
+
   constructor(public formBuscaService: FormBuscaService) {}
 
   buscar() {
-    console.log(this.formBuscaService.formBusca.value);
+    const formBuscaValue = this.formBuscaService.formBusca.value;
+    this.realizarBusca.emit(formBuscaValue);
   }
 }

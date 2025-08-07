@@ -1,3 +1,4 @@
+import { BuscaComponent } from './pages/busca/busca.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'perfil',
     component: PerfilComponent,
     canActivate: [authGuard],
+  },
+  {
+    path: 'busca',
+    component: BuscaComponent,
   },
 ];
 
