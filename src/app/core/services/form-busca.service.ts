@@ -1,3 +1,4 @@
+import { Companhia } from './../types/type';
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatChipSelectionChange } from '@angular/material/chips';
@@ -20,12 +21,13 @@ export class FormBuscaService {
       origem: new FormControl(null, [Validators.required]),
       destino: new FormControl(null, [Validators.required]),
       tipo: new FormControl('Econômica'),
-      adultos: new FormControl(3),
+      adultos: new FormControl(1),
       criancas: new FormControl(0),
-      bebes: new FormControl(1),
+      bebes: new FormControl(0),
       dataIda: new FormControl(null, [Validators.required]),
       dataVolta,
       conexoes: new FormControl(null),
+      Companhia: new FormControl(null),
     });
 
     somenteIda.valueChanges.subscribe((somenteIda) => {
@@ -106,6 +108,10 @@ export class FormBuscaService {
 
     if (conexoesControl.value) {
       dadosBusca.conexoes = conexoesControl.value;
+    }
+    const companhiasControl = this.obterControle<number[]>('companhias');
+    if (companhiasControl.value) {
+      dadosBusca.companhiasId = companhiasControl.value;
     }
     return dadosBusca;
   }
