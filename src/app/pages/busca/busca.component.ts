@@ -2,6 +2,7 @@ import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 import { Component, OnInit } from '@angular/core';
 import { PassagensService } from 'src/app/core/services/passagens.service';
 import { DadosBusca, Passagem } from 'src/app/core/types/type';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-busca',
@@ -24,15 +25,19 @@ export class BuscaComponent implements OnInit {
       passageirosAdultos: 1,
       tipo: 'Executiva',
     };
-
     const busca = this.formBuscaService.formEstaValido
       ? this.formBuscaService.obterDadosBusca()
       : buscaPadrao;
-
-    this.passagensService.getPassagens(busca).subscribe((res) => {
-      console.log(res);
-      this.passagens = res.resultado;
-    });
+    this.passagensService
+      .getPassagens(busca)
+      .pipe(take(1))
+      .subscribe((res) => {
+        this.passagens = res.resultado;
+        this.formBuscaService.formBusca.patchValue({
+          precoMin: res.precoMin,
+          precoMax: res.precoMax,
+        });
+      });
   }
 
   busca(ev: DadosBusca) {
