@@ -92,6 +92,6 @@ export class PerfilComponent implements OnInit {
 
   deslogar() {
     this.userService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['auth/login']);
   }
 }

@@ -14,17 +14,11 @@ const routes: Routes = [
     pathMatch: 'full', // tem full e prefix, o full ele verifica toda a url
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'cadastro',
-    component: CadastroComponent,
-  },
-  {
-    path: 'perfil',
-    component: PerfilComponent,
-    canActivate: [authGuard],
+    path: 'auth',
+    loadChildren: () =>
+      import('./autenticacao/autenticacao.module').then(
+        (m) => m.AutenticacaoModule
+      ),
   },
   {
     path: 'busca',

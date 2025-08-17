@@ -10,7 +10,7 @@ export const authGuard = () => {
   if (userService.estaLogado()) {
     return true;
   } else {
-    router.navigate(['/login']);
+    router.navigate(['auth/login']);
     return false;
   }
 };

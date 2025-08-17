@@ -7,10 +7,17 @@ import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../core/material/material.module';
+import { AutenticacaoRoutingModule } from './autenticacao-routing.module';
 
 @NgModule({
   declarations: [CadastroComponent, LoginComponent, PerfilComponent],
-  imports: [CommonModule, SharedModule, MaterialModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    AutenticacaoRoutingModule,
+  ],
   exports: [CadastroComponent, LoginComponent, PerfilComponent],
 })
 export class AutenticacaoModule {}

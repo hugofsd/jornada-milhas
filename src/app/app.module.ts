@@ -8,7 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
-import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
 import { HomeModule } from './home/home.module';
 
@@ -22,7 +21,6 @@ import { HomeModule } from './home/home.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AutenticacaoModule,
     BuscaModule,
     HomeModule,
   ],
