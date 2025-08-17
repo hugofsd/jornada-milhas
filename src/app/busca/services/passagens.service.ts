@@ -2,7 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, take } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { DadosBusca, Destaques, Passagem, Resultado } from '../types/type';
+import {
+  DadosBusca,
+  Destaques,
+  Passagem,
+  Resultado,
+} from '../../core/types/type';
 
 @Injectable({
   providedIn: 'root',

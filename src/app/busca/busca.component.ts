@@ -1,6 +1,6 @@
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 import { Component, OnInit } from '@angular/core';
-import { PassagensService } from 'src/app/core/services/passagens.service';
+import { PassagensService } from 'src/app/busca/services/passagens.service';
 import { DadosBusca, Destaques, Passagem } from 'src/app/core/types/type';
 import { take } from 'rxjs';
 

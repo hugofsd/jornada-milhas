@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
-import { PassagensService } from 'src/app/core/services/passagens.service';
+import { PassagensService } from 'src/app/busca/services/passagens.service';
 
 @Component({
   selector: 'app-precos',
