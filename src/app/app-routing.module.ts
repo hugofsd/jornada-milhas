@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  {
     path: 'auth',
     loadChildren: () =>
       import('./autenticacao/autenticacao.module').then(
@@ -15,12 +20,7 @@ const routes: Routes = [
       import('./busca/busca.module').then((m) => m.BuscaModule),
   },
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
-  {
-    path: '**',
+    path: '**', // precisa ficar por ultimo no array
     redirectTo: '/pagina-nao-encontrada',
     pathMatch: 'full',
   },
