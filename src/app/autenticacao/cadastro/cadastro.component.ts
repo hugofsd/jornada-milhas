@@ -1,4 +1,4 @@
-import { CadastroService } from './../../core/services/cadastro.service';
+import { CadastroService } from '../services/cadastro.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormularioService } from 'src/app/core/services/formulario.service';

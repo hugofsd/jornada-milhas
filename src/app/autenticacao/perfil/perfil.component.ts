@@ -1,11 +1,11 @@
 import { Router, RouterModule } from '@angular/router';
 import { FormularioService } from 'src/app/core/services/formulario.service';
 import { FormGroup } from '@angular/forms';
-import { CadastroService } from './../../core/services/cadastro.service';
-import { TokenService } from './../../core/services/token.service';
+import { CadastroService } from '../services/cadastro.service';
+import { TokenService } from '../services/token.service';
 import { Component, OnInit } from '@angular/core';
 import { PessoaUsuaria } from 'src/app/core/types/type';
-import { UserService } from 'src/app/core/services/user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-perfil',
