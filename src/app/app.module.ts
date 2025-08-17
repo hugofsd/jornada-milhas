@@ -9,6 +9,8 @@ import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
+import { BuscaModule } from './busca/busca.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,8 @@ import { AutenticacaoModule } from './autenticacao/autenticacao.module';
     HttpClientModule,
     ReactiveFormsModule,
     AutenticacaoModule,
+    BuscaModule,
+    HomeModule,
   ],
   providers: [
     {

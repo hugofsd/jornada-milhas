@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Promocao } from '../../../core/types/type';
+import { Promocao } from 'src/app/core/types/type';
+
 import { environment } from 'src/environments/environment';
 
 @Injectable({

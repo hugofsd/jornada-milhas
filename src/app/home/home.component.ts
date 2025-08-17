@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PromocaoService } from 'src/app/pages/home/services/promocao.service';
+import { PromocaoService } from './services/promocao.service';
 
 @Component({
   selector: 'app-home',
