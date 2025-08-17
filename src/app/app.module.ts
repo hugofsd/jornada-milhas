@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
-import { BuscaModule } from './busca/busca.module';
 import { HomeModule } from './home/home.module';
+//import { ErroModule } from './core/erro/erro.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,11 +19,11 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     SharedModule,
     MaterialModule,
+    HomeModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BuscaModule,
-    HomeModule,
+    //ErroModule
   ],
   providers: [
     {

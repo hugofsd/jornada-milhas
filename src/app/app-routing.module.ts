@@ -1,18 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './autenticacao/login/login.component';
-import { CadastroComponent } from './autenticacao/cadastro/cadastro.component';
-import { PerfilComponent } from './autenticacao/perfil/perfil.component';
-import { authGuard } from './autenticacao/auth.guard';
-import { BuscaComponent } from './busca/busca.component';
-
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full', // tem full e prefix, o full ele verifica toda a url
-  },
   {
     path: 'auth',
     loadChildren: () =>
@@ -22,7 +11,18 @@ const routes: Routes = [
   },
   {
     path: 'busca',
-    component: BuscaComponent,
+    loadChildren: () =>
+      import('./busca/busca.module').then((m) => m.BuscaModule),
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: '/pagina-nao-encontrada',
+    pathMatch: 'full',
   },
 ];
 
